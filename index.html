@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Project</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="socialinertia.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/webdevelopment/day11.css">
+  <style>
+    #cool{
+  color: #007bb5;
+}
+    table {
+      background-color: #b39191;
+      width: 100%;
+      border: 1px solid black;
+      font-family: Arial, Helvetica, sans-serif;
+      border: 1px solid #dddddd;
+    }
+
+    td,
+    th {
+
+      text-align: center;
+      padding: 8px;
+    }
+
+    th {
+      font-size: large;
+    }
+
+    button {
+      margin-right: 10px;
+    }
+
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Verdana, sans-serif;
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    /* Slideshow container */
+    .slideshow-container {
+      max-width: 1000px;
+      position: relative;
+      margin-left: 400px;
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* The dots/bullets/indicators */
+    .dot {
+      height: 15px;
+      width: 15px;
+      margin: 0 2px;
+      background-color: #e2dada;
+      border-radius: 50%;
+      display: inline-block;
+      transition: background-color 5s ease;
+    }
+
+    .active {
+      background-color: #111111;
+    }
+
+    /* Fading animation */
+    .fade {
+      animation-name: fade;
+      animation-duration: 1s;
+    }
+
+    @keyframes fade {
+      from {
+        opacity: 0.4
+      }
+
+      to {
+        opacity: 1
+      }
+    }
+
+    /* On smaller screens, decrease text size */
+    @media only screen and (max-width: 300px) {
+      .text {
+        font-size: 11px
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <div id="navbar">
+      <button><i class="fa fa-bars"></i> <select style="background-color: gray;">
+          <option value="0">ALLSECTION</option>
+          <option value="1">Activities</option>
+          <option value="2">Religion</option>
+          <option value="3">Environment</option>
+          <option value="4">Management</option>
+          <option value="5">Energy</option>
+          <option value="5">Blogs</option>
+          <option value="6"> ABOUT</option>
+        </select></button>
+
+      <button id="a"><i class="fa fa-search"></i> <select style="background-color: gray">
+          <option value="0">SEARCH</option>
+          <option value="1">Activities</option>
+          <option value="2">Religion</option>
+          <option value="3">Environment</option>
+          <option value="4">Management</option>
+          <option value="5">Energy</option>
+          <option value="5">Blogs</option>
+          <option value="6"> ABOUT</option>
+        </select></button>
+
+
+
+
+      <!-- <button class="open-button" onclick="Login()">Log in</button> -->
+
+      <button class="open-button" onclick="login()">login</button>
+
+      <div class="form-popup" id="myForm">
+        <form action="/action_page.php" class="form-container">
+          <h1>Login</h1>
+
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+
+          <button type="submit" class="btn">Login</button>
+          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+      </div>
+
+      <script>
+        function login() {
+          document.getElementById("myForm").style.display = "block";
+        }
+
+        function closeForm() {
+          document.getElementById("myForm").style.display = "none";
+        }
+      </script>
+
+
+      <button> SUSCRIBE</button>
+      <button style="margin-top: 0px;width: auto;"><a href="create.html"> CREATE AN ACCOUNT</button>
+      <button>CONTATE US</button>
+      <p>THE SOCIAL INERTIA</p>
+      <div id="head">
+        <a href="https://en.wikipedia.org/wiki/Social_inertia">ACTIVITIES</a>
+        <a href="https://en.wikipedia.org/wiki/Social_inertia">RELIGION AND SOCIETY</a>
+        <a
+          href="https://scholar.google.co.in/scholar?q=environment+of+social+inertia&hl=en&as_sdt=0&as_vis=1&oi=scholart">ENVIROMENT</a>
+        <a
+          href="https://www.cambridge.org/core/journals/journal-of-economic-history/article/technological-inertia-in-economic-history/D02DF5B00AD6FA52FB4CBDDAEDC70070">TECHNOLOGY</a>
+        <a href="https://renewablewatch.in/2020/09/24/power-shift/">MANAGEMENT</a>
+        <a
+          href="https://energy.economictimes.indiatimes.com/news/oil-and-gas/atmanirbhar-bharat-vis-vis-anti-globalization-conundrum-a-perspective/96724496">ENERGY</a>
+        <a href="index1.html">BLOGS</a>
+        <a href="/Avilipsa/my.html">ABOUT</a>
+
+      </div>
+  </header>
+
+  <div id="content">
+    <div style="display: flex;margin: 100px ;">
+      <section style="padding: 50px;">
+        <nav>
+          <ul><a href="https://energy.economictimes.indiatimes.com/news/oil-and-gas/atmanirbhar-bharat-vis-vis-anti-globalization-conundrum-a-perspective/96724496">
+            <li>News</li>
+            <li>Wind power</li>
+            <li>Bio Energy</li>
+            <li>Off Grid Power</li>
+            <li>Green Hydrogen</li>
+            <li>Solar Power/li>
+            <li>
+                <option value="0">More</option>
+              </li>
+            <li>
+                <option value="1">New Selter</option>
+              </li>
+            <li>
+                <option value="2">Master Class</option>
+              </li>
+            <li>
+                <option value="3">Contact us</option>
+              </li>
+            <li>
+                <option value="4">About us</option>
+              </li>
+              </ul>
+            </a>
+        </nav>
+      </section>
+      <section  style="padding: 50px;">
+        <nav>
+          <ul><a href="https://energy.economictimes.indiatimes.com/news/oil-and-gas/atmanirbhar-bharat-vis-vis-anti-globalization-conundrum-a-perspective/96724496">
+            <li>Home</li>
+            <li>Engineers Segment</li>
+            <li>Events</li>
+            <li>Awards</li>
+            <li>Webinar</li>
+            <li>Brand solution</li>
+            <li>
+                <option value="0">More</option>
+              </li>
+            <li>
+                <option value="1">New Selter</option>
+              </li>
+            <li>
+                <option value="2">Master Class</option>
+              </li>
+            <li>
+                <option value="3">Contact us</option>
+              </li>
+            <li>
+                <option value="4">About us</option>
+              </li>
+              </ul>
+            </a>
+        </nav>
+      </section>
+      <section  style="padding: 50px;">
+        <nav>
+          <ul><a href="https://energy.economictimes.indiatimes.com/news/oil-and-gas/atmanirbhar-bharat-vis-vis-anti-globalization-conundrum-a-perspective/96724496">
+            <li>Editorial</li>
+            <li>Leaders Speak</li>
+            <li>Events</li>
+            <li>Awards</li>
+            <li>Webinar</li>
+            <li>Brand solution</li>
+            <li>
+                <option value="0">More</option>
+              </li>
+            <li>
+                <option value="1">New Selter</option>
+              </li>
+            <li>
+                <option value="2">Master Class</option>
+              </li>
+            <li>
+                <option value="3">Contact us</option>
+              </li>
+            <li>
+                <option value="4">About us</option>
+              </li>
+              </ul>
+            </a>
+        </nav>
+      </section>
+      <section  style="padding: 50px;">
+        <nav>
+          <ul><a href="https://energy.economictimes.indiatimes.com/news/oil-and-gas/atmanirbhar-bharat-vis-vis-anti-globalization-conundrum-a-perspective/96724496">
+            <li>News</li>
+            <li>Leaders Speak</li>
+            <li>Events</li>
+            <li>Awards</li>
+            <li>Webinar</li>
+            <li>Brand solution</li>
+            <li>
+                <option value="0">More</option>
+              </li>
+            <li>
+                <option value="1">New Selter</option>
+              </li>
+            <li>
+                <option value="2">Master Class</option>
+              </li>
+            <li>
+                <option value="3">Contact us</option>
+              </li>
+            <li>
+                <option value="4">About us</option>
+              </li>
+              </ul>
+            </a>
+        </nav>
+      </section>
+    
+    </div>
+<section>
+      <div class="slideshow-container">
+
+        <div class="mySlides fade">
+          <div class="numbertext">1 / 8</div>
+          <img src="socio.png" style="width: 550px;">
+
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">2 / 8</div>
+          <img src="socialinia1.jpeg" style="width: 410px;">
+
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">3 / 8</div>
+          <img src="socialinia2.jpeg" style="width: 270px;">
+
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">4/ 8</div>
+          <img src="socialinia3.png" style="width: 410px;">
+
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">5 / 8</div>
+          <img src="socialinia4.jpg" style="width: 550px;">
+
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">6 / 8</div>
+          <img src="socialinia5.jpeg" style="width: 550px;">
+
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">7 / 8</div>
+          <img src="socialinia6.png" width=620px;>
+
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext">8 / 8</div>
+          <img src="socialinia7.jpeg" style="width: 740px;">
+
+        </div>
+      </div>
+      <br>
+
+      <div style="text-align:center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+          let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) { slideIndex = 1 }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex - 1].style.display = "block";
+          dots[slideIndex - 1].className += " active";
+          setTimeout(showSlides, 2000); // Change image every 2 seconds
+        }
+      </script>
+    </section>
+    <div style="text-align: center; line-height: 40px;">
+    <h1>Atmanirbhar-Bharat-vis-vis-anti-<br>
+      Globalization-conundrum-a-<br>
+      Perspective</h1>
+    <p>
+      If we analyse the growth of some of the key sectors of the Indian economy as exemplified<br>
+      atmanirbhar-bharat-vis-vis the five stated pillers of Atmanirbhar Bharat Initiative juxtaposed with the<br>
+      essence of globalization,branding Atmanirbharta as anti-Globalization would be a gross<br>
+      mistake.
+    </p>
+    <br><hr><br>
+    <img src="https://etimg.etb2bimg.com/photo/96724502.cms">
+    <br><hr><br>
+    <p>New Delhi: The two key terms in the subject matter “Atmanirbhar” and<br>
+       “Globalization” prima facie appear to be antithetical to each other,<br>
+        however, in the present global context vis-à-vis the Indian economic<br> 
+       scenario,Atmanirbhar Bharat carries a neo-globalization perspective, <br>
+       differing a great extent from the anti-globalization connotation.<br><br><br><br>
+      </p>
+
+      <p> India has always been a flourishing consumer market since ancient times <br>
+        and Europeans took most of the pie in the voluminous trade of the world <br>
+        with the Indian peninsula. While enjoying power in India, the British <br>
+        exploited the Indian resources particularly the raw materials and <br>
+        deliberately devoid India reaping the benefits of the Industrial revolution <br>
+        by not installing enough industries catering to the needs of the Indian<br>
+       population.
+       <br><hr><br>
+      </p>
+      <img src="https://tpc.googlesyndication.com/simgad/8822520010513413927?">
+      <br><hr><br>
+      <p>
+        In the globalization era post-1991, India exposed herself to the rest of the<br>
+        world and accepted global norms and trends with wide open hands. It<br>
+        gave ample opportunities to a few non-state actors like Multinational<br>
+        Companies (MNCs) to exploit the benefits proposed by the Indian <br>
+        administration.This truly opened the eyes of the elite working class in<br>
+        India and nudged them to adopt the developments that occurred in the<br>
+        western world.The naïve Indian companies and their unexposed people<br>
+        started racing with their western counterparts with the latter already far<br>
+        ahead ab initio. </p>
+         <br><hr><br>
+        <img src="https://img.etb2bimg.com/files/retail_files/net-zero-14june-1711622246-bnr-1.jpg">
+        <br><hr><br>
+    </div>
+    <div style="text-align: center;line-height: 40px;list-style:armenian;">
+     <h2> Growth of hydrogen and solar power</h2>
+<p>
+In terms of the technologies of the future, there are many research areas. The hydrogen economy, the addition of solar power <br>
+projects, the gradual increase in wind energy, crude oil to chemicals, valorisation of biomass and other waste-to-energy projects are <br>
+some of the ongoing research areas expected to achieve the requisite pace to minimise the burden on fossil fuels. Hydrogen and<br>
+solar energy inter alia are two key areas that are emerging as frontrunners in changing the global energy landscape. The “Future of <br>
+Hydrogen”, a technology report by the International Energy Agency, has indicated a gradual rise in pure hydrogen demand during<br>
+1975-2018.
+</p>   
+</div>
+<hr style="color:#44211b;">
+     <div style="display: flex;">
+      
+      <div style="margin-left:50px; line-height: 40px; padding: 4px;">
+        <h3 style="color: #7c3e33;">Energy lancspace</h3>
+      <h3>Out look  </h3>
+      <p>
+        It, therefore, appears that a paradigm shift in the global energy<br>
+         landscape is inevitable, in which all the segments of energy <br>
+         production and storage as we see them today will be present in a <br>
+        range of amplitudes, though their forms might be different.<br>
+         Hydrogen-based energy and solar energy will play a greater role in<br>
+          driving the world’s economy. The stage is set for developing<br>
+           countries like India to become self-reliant. It is committed to a <br>
+           mammoth economic target and has huge potential in terms of<br>
+            demographic dividend and resources for rapid infrastructure<br>
+             development in alternative sources of energy, which will help keep<br>
+              pace with the leading nations. There is an urgent need for these<br>
+               countries to formulate a robust policy framework for the <br>
+               upcoming decade so that they can create a niche for themselves <br>
+               in the league of countries involved in sustainable energy research.
+      </p>
+      </div>
+      <div>
+        <img src="https://149356857.v2.pressablecdn.com/wp-content/uploads/2020/09/RW-46-A.jpg" width="700px;;">
+      </div>
+     </div>
+     <br>
+     <hr>
+    <br>
+    <hr style="color: #007bb5;">
+    <div style="text-align: center;line-height: 40px;list-style:circle;">
+     <img src="data:image/jpeg;base64,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">
+      <h2> The Social Inertia</h2>
+    <h3>content</h3>
+    <p>In <span id="cool">psychology </span> and <span id="cool"><br>
+      sociology</span>,<b> social inertia or cultural inertia<br>
+      </b> is the resistance to change or the permanence of stable <br>
+      relationships possibly outdated in societies or social groups.<br>
+       Social inertia is the opposite of <span id="cool">social change.</span></p>
+    <h3>Overview</h3>
+    <p>The idea of social inertia can be traced back to French sociologist Pierre Bourdieu.<br>
+       According to Bourdieu, each person occupies a position in a social space, which consists<br>
+      of his or her social class as well as social elationships and <span id="cool">social networks.<br>
+      </span> Through the individual's engagement in the social space, he or she develops a set of<br>
+       behaviors, lifestyle and habits (which Bourdieu referred to as habitus) which often serve to <br>
+      maintain the status quo. Thus, people are encouraged to "accept the social world as it is, to <br>
+      take it for granted, rather than to rebel against it, to counterpose to it different, even<br>
+       antagonistic, <span id="cool">possibles."<sup>[1]</sup></span> This can explain <br>
+      continuity of the social order through time.
+      <br>
+      Sociologists have examined how economic and <span id="cool"><br>
+      cultural heritage</span> is transmitted across generations,<br>
+      which can lead to <span id="cool">strong social</span> inertia <br>
+      even during times of social progress.In particular, Bourdieu found<br>
+       in his studies of Algeria that even during times of rapid economic<br>
+      change, cultural and symbolic factors limited the flexibility of the<br>
+      society to quickly adapt to change.<span id="cool"><sup>[2]</sup></span>
+      <br>
+      Therefore, social inertia has been used to explain how dominant<span id="cool"><br>
+      social classes</span> maintain their status and privilege over time. Currently,<br>
+      this is a hotly debated topic in the<span id="cool"> United States.</span> While<br>
+      <span id="cool">President Barack Obama </span>America's commitment to<span id="span"> <br>
+      equal opportunity </span> his second <span id="span">inaugural address, Nobel laureate <br>
+      Joseph E. Stiglitz</span>believes it is a myth that modern society offers<span id="cool"><br>
+      equal opportunity</span> and high <span id="cool">social mobility</span> through mechanisms<br>
+      such as <span id="cool">formal education.<sup>[3]</sup></span>
+    </p><hr>
+    <h3>Example</h3>
+    <hr>
+    <h3> In the culture of honor</h3>
+    <p>
+      An example of <span id="cool">social inertia</span> in the culture of the United<br>
+      States is the<span id="cool">culture of honor </span> exists in parts of the South and West.<br>
+      In the culture of honor, <span id="cool">violence</span> is seen as an acceptable way of<br>
+      responding to insults or threats to a person's self,family, property, or<span id="cool"> reputation.<br>
+      </span> Some psychologists and historians believe that the culture of honor arose as a way of enforcing <br>
+      order on the frontier, when the South and West were first being settled and there was inadequate<br>
+      law enforcement and <span>little social order.<sup>[4]</sup></span> According to this hypothesis, herding <br>
+      (which is a solitary activity) should be more closely tied to the culture of honor than farming (which is a <br>
+      cooperative activity). However, some scholars have not found support for this. <span id="cool">When researchers<br>
+      examined the relationship between<span>agricultural practices</span> in the rural South and the white male homicide<br>
+       rates in those areas, they did not find that homicide rates were higher in counties that were hilly and arid and <br>
+       therefore more suitable for herding vs. farming. They concluded that homicide rates did not support the herding vs.<br>
+        farming hypothesis for the culture of honor.<sup>[5]</sup> Therefore, religion and poverty have been offered as<br>
+         alternative explanations for the origins of the<span id="cool">culture of honor.<sup>[6]</sup></span>
+    </p>
+    <p>
+      Even though the<span> economic and social circumstances</span> of the South and West have since changed,<br>
+      the culture of honor persists due to social inertia. It has become a social norm in southern and western <br>
+      culture, and these norms persist even when <span>economies change.<sup>[7]</sup></span>
+    </p><hr>
+    <h3>In creative labor</h3>
+    <p>
+    In a 2013 journal article in <span id="cool">the Journal of Sociology</span>, sociologist<br>
+     Scott Brook applied the theory of social inertia to the field of creative labor. Specifically,<br>
+     Brook was concerned with why so many students would continue to seek degrees in creative fields<br>
+    (such as the arts and creative writing), even when the oversupply of labor meant that many students <br>
+    were unable to find employment in those fields after graduation. Even if they were able to <br>
+    <span id="cool">find employment,</span> they earned less than their peers with <span id="cool">non-creative<br>
+    degrees.<sup>[8]</sup></span>sp> Scott used Bourdieu'snotion of social inertia to suggest that students<br>
+    who were drawn to the non-commercial nature of creative fields came from families with low socioeconomic<br>
+    status and whose parents had not been able to develop a career themselves.Students followed in their<br>
+    parents' footsteps by choosing educational pursuits which were less likely to lead to high-earning careers,<br>
+    thus leading to social inertia in income across generations.
+    </p><hr>
+    <h3>In collaborations</h3>
+    <p>
+      Social inertia has been used as a way of <span id="cool">studying<br>
+         collaborations</span> and interactions between people. Specifically,<br>
+      social inertia has been defined as a measurement of how likely people are <br>
+      to continue collaborating with previous partners or members of the same team.<br>
+       An analysis of large-scale, complex networks such as the IMDb showed that<br>
+      two types of "extreme" collaboration behaviors appeared more than average – <br>
+      some people collaborate with the same partners over and over again,<br>
+       while others change partners<span id="cool"> frequently.<sup>[9]</sup></span>
+    </p><hr>
+    <h2>In attitudes and attitude change</h3>
+    <p>
+      Psychological studies on attitudes and attitude change have found that <br>
+      participants are reluctant to reduce their confidence in an estimate that<br> 
+      they have made even after they receive new information that goes against their<br>
+      original estimate. Researchers have hypothesized that this "inertia effect" is <br>
+      due to participants' psychological commitment to their initial judgments.[10]
+    </p><hr>
+    <h3> In romantic relationships</h3>
+    <p>
+      Some <span id="cool">psychological studies</span> have shown that <br>
+      premarital cohabitation (living together before marriage) is associated<br>
+      with an increased risk of divorce, and this has been termed the cohabitation<br>
+       effect.[11] Researchers believe that one reason for this effect is that <br>
+       living together increases the inertia of the relationship – i.e. the likelihood<br>
+      that a couple will continue to stay together vs. break up.<sup>[12]</sup>> Inertia <br>
+      in cohabiting couples occurs because living together <span id="cool">imposes <br>
+      constraints </span> a relationship (a shared lease, etc.) that make relationships <br>
+      harder to end.Therefore, a cohabiting couple may stay together even if they are not<br>
+      compatible. Because living together represents an ambiguous form of commitment <br>
+      compared with marriage, cohabiting may not increase the levels of dedication in<br>
+       either partner. Partners may "slide" into marriage through cohabitation<br> 
+       instead of making a firm decision to commit to each other, leading to <br>
+       problems in the marriage in the future.[13]
+      <br><br>
+      However, the research on whether higher divorce rates are due<br>
+      to the cohabitation effect are mixed. For example,researchers<br>
+      have found that the relationship between cohabitation and divorce <br>
+      also depends on factors such as when the couple was married (for example,<br>
+       marriages which take place after 1996 do not show the cohabitation effect),<br>
+      their race/ethnicity, and their marriage plans at the time of <span id="cool">co<br>
+        habitation<sup>.[14]</sup></span> Other studies have found that what<br>
+      has been called the cohabitation effect is entirely attributable to other factors.[15]
+    </p><hr>
+    <h3>In animal behavior</h3>
+    <p>
+      The term social inertia was used by A.M. Guhl in 1968 to describe<br>
+      
+      dominance<span id="cool"> hierarchies in animal
+      groups.<sup>[16]</sup></span> Studies of animal behavior have found <br>
+      that groups of animals can form social orders or social hierarchies that<br>
+      are relatively fixed and stable.[17] For example,<br>
+      chickens establish a social order within the group based on pecking <br>
+      behaviors.Even when some of the chickens were treated with an androgen to<br> 
+      increase their aggressiveness, the established social order suppressed their<br> 
+      exhibition of aggressive behaviors so that<br>
+      social order was maintained.[18]
+
+      This same effect has been found in other birds as well as in invertebrates<br>
+       such as <b>social wasps</b> and the burying beetle<span id="cool"> N. orbicollis.<br>
+      </span> Researchers theorize that this lack of change in social hierarchies even<br>
+       under the influence of aggression hormones is due to the effects of familiarity – <br>
+       animals learn their place in the social hierarchy of a group within the first few<br>
+        encounters with other<span id="cool"> group members.<sup>[19]</sup></span> This will <br>
+        cause low-ranking animals treated with aggression hormones to behave aggressively<br>
+         towards animals from other groups but not towards dominant members of their<br> own group.[20]
+    </p>
+
+    <h3>Related concepts</h3>
+    <hr>
+    <h3>Cultural inertia</h3>
+    <p>
+      The psychologist Michael Zarate has coined the term<br>
+      "cultural inertia" to refer to reactions to social change,<br>
+      such as those caused by immigration. Cultural inertia is <br>
+      defined as the desire to avoid cultural change, and also<br>
+      the desire for change to continue once it is already occurring.<br>
+      Within the cultural inertia framework, the dominant group is<br>
+       stable and resists cultural change, while subordinate groups<br>
+      desire cultural changes which incorporate their cultural traditions<br>
+       so that they don't have to assimilate into the dominant culture.<br>
+      In the context of the United States and immigration, the framework<br>
+      suggests that white majority members resist the cultural change that<br>
+      occurs from immigration, while immigrant groups try to enact change<br>
+      <span id="cool"> in U.S. culture.<sup>[21]</sup></span>
+      <br><br>
+      Cultural inertia is related to social psychological theories such as<br>
+      the instrumental model of group conflict,acculturative fit, and system <br>
+      justification theory. It is a contributor to intergroup prejudice due to<br>
+      groups'fear of cultural change.[22]
+
+    </p>
+    
+    <img src="https://ad.adsrvr.org/3i1xkjw/xhi1xrf/ik5ja4p7_970x90.png?cb=895961"> <br>
+    <img src="https://s0.2mdn.net/simgad/9727776271976780796" width=100 style="margin-left: 0px;">
+    <img src="https://thediplomat.com/wp-content/uploads/2024/05/sizes/td-list-m-1/thediplomat_2024-05-17-174559.jpg">
+    <img src="https://thediplomat.com/wp-content/uploads/2024/05/sizes/td-list-m-1/thediplomat_2024-05-21-133237.jpg">
+    <img src="https://thediplomat.com/wp-content/uploads/2024/05/sizes/td-list-m-1/thediplomat_2024-05-17-201817.jpg">
+    <img src="https://thediplomat.com/wp-content/uploads/2024/03/sizes/td-list-m-1/thediplomat_2024-03-19-232847.jpg">
+    <img src="https://thediplomat.com/wp-content/uploads/2022/12/sizes/td-list-m-1/thediplomat_2022-12-12-131223.jpg">
+    <figure>
+      <img
+        src="https://png.pngtree.com/background/20230419/original/pngtree-website-science-and-technology-light-effect-ring-background-picture-image_2448025.jpg"
+        style="width: 100%;">
+    </figure>
+    <img
+      src="https://cat.sg1.as.criteo.com/delivery/ck.php?cppv=3&cpp=sukjnsg93rqkHr35DApoa5-gTPnz3lHmheLKOIVASsQPfZjlcIjkQyaOO7ZfUcx2wysBChNVpPUN4fgTu-4vC-fZKJUCZp5HY67NxYcPceYwRzX5SoXtHMM_Xl-AbiWmoSqEL8peAKLVR7V_X3f_rq6v1q5o0LdfB3AuJs1zo18Cnx4el49CTuz-xyJMjN7gOo9Xq7mlvbFiOoHeSrU0vwLbeyo49vaPLkrl83PNvH5X_XFO-GoPkRO7-ORCNYQ2BT62KdzWLA3oiYgenHFDWjxjlQqBaTjU1oqgECVZ1T1bHBAXM1GkCmwE2hnrP73LdPNNnscguodCKJqfYS9QMV0HNwV-1H_T1EklFNtNLOKMCKR8BUJbB01RQo1fcU6yy7DfQ9R1dXiKTrkbXyydWJJ10BP-zhjVVC6tVSK56S4q8zLbqzlfgXbCKVxnZsuOe_GhUXwbsyoM2UPuhdWNtosmX0DBJdq6nHN5oa9xvUf_tQ3gbXGl-yTGHFV1d3UGi79joH_ImWeDZghdAmgLycTZ7Vo&maxdest=https%3A%2F%2Fwww.floweraura.com%2F%3Futm_source%3Dcriteo%26utm_medium%3Dcpc%26utm_campaign%3DNonBuyers_Conversions%26utm_id%3D326988%26cto_pld%3Dtu3K_sR4AQCXANwMRtHtDg">
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <table>
+      <tr>
+        <th>REGIONS</th>
+        <TH>TOPICS</TH>
+        <TH>BLOGS</TH>
+        <th>MORE</th>
+        <th>ABOUT</th>
+      </tr>
+      <tr>
+        <td>Asia</td>
+        <td>Diplomacy</td>
+        <td>ASEAN Beat</td>
+        <td>Asia Defense</td>
+        <td>Tokyo Report</td>
+      </tr>
+      <tr>
+        <td>Tokyo</td>
+        <td>Economy</td>
+        <td>Ocenia</td>
+        <td>India</td>
+        <td>Sports and culture</td>
+      </tr>
+      <tr>
+        <td>The plus</td>
+        <td>Flash point</td>
+        <td>society</td>
+        <td>security</td>
+        <td>APAC Insider</td>
+      </tr>
+      <tr>
+        <td>China Power</td>
+        <td>Policitics</td>
+        <td>A New Japan</td>
+        <td>Teach Biz</td>
+        <td>Indian Decade</td>
+      </tr>
+      <tr>
+        <td>South Asia</td>
+        <td>Policitics</td>
+        <td>A New Japan</td>
+        <td>Economy</td>
+        <td>Ocenia</td>
+      </tr>
+
+    </table>
+  </div>
+
+  <footer>
+
+
+    <hr>
+    <a href="#" class="fa fa-rss"></a>
+    <a href="#" class="fa fa-instagram"></a>
+    <a href="#" class="fa fa-facebook"></a>
+    <a href="#" class="fa fa-twitter"></a>
+    <a href="#" class="fa fa-linkedin"></a>
+    <a href="#" class="fa fa-youtube"></a>
+    <br>
+    <p>&#169; the social inertia iniciative / foundation</p>
+  </footer>
+</body>
+
+</html>
